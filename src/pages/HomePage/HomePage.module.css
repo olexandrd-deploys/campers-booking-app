@@ -10,15 +10,40 @@
 
     max-width: 1440px;
     height: 696px;
+}
 
+.heroContainer {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 80px;
+    padding: 260px 64px;
 }
 
 .description {
-    /* position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 100%;
-    height: 100%; */
-    color: white;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 40px;
+    color: #f7f7f7;
+    font-weight: 600;
+}
 
+.title {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.description h1 {
+    font-size: 48px;
+    line-height: 67%;
+}
+
+.description h2 {
+    font-size: 24px;
+    line-height: 133%;
 }

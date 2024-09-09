@@ -5,7 +5,7 @@ import NavMenu from "../NavMenu/NavMenu";
 const AppBar = () => {
   return (
     <div className={css.AppBar}>
-      <NavLink to="/" className={css.link} activeClassName={css.active}>
+      <NavLink to="/" className={css.link}>
         <svg className={css.logo}>
           <use href="/icons.svg#logo"></use>
         </svg>
