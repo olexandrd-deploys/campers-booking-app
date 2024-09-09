@@ -1,7 +1,13 @@
-import React from "react";
+import AppBar from "./components/AppBar/AppBar";
+import HomePage from "./pages/HomePage/HomePage";
 
 const App = () => {
-  return <div></div>;
+  return (
+    <>
+      <AppBar />
+      <HomePage />
+    </>
+  );
 };
 
 export default App;

@@ -1,0 +1,11 @@
+.AppBar {
+    padding: 28px 64px 28px 64px;
+    display: flex;
+    flex-direction: row;
+    gap: 450px;
+}
+
+.logo {
+    height: 16px;
+    width: 136px;
+}
