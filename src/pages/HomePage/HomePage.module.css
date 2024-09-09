@@ -2,22 +2,17 @@
     background-image: url(images/hero.jpg);
     background-size: cover;
     background-position: center;
-
-    @media screen and (dpi: 192) {
-        background-image: url(images/hero@2x.jpg);
-
-    }
-
     max-width: 1440px;
     height: 696px;
-}
-
-.heroContainer {
     display: flex;
     justify-content: flex-start;
     flex-direction: column;
     gap: 80px;
     padding: 260px 64px;
+
+    @media screen and (min-resolution: 192dpi) {
+        background-image: url(images/hero@2x.jpg);
+    }
 }
 
 .description {
