@@ -1,0 +1,23 @@
+.selectBox {
+
+    width: 360px;
+    height: 56px;
+}
+
+.mapIcon {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    z-index: 2;
+    left: 20px;
+    bottom: 16px;
+}
+
+.mapIcon svg {
+    width: 20px;
+    height: 20px;
+}
+
+.locationContainer {
+    position: relative;
+}

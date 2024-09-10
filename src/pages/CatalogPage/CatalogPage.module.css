@@ -1,0 +1,13 @@
+.CatalogPage {
+    display: flex;
+    padding: 0 64px;
+}
+
+.toolbar {
+    display: flex;
+    flex-direction: column;
+}
+
+.searchResultList {
+    display: flex;
+}
