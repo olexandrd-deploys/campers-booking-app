@@ -32,6 +32,7 @@ const customStyles = {
   input: (styles) => ({
     ...styles,
     paddingLeft: 48,
+    color: "#101828",
   }),
   singleValue: (styles) => ({
     ...styles,
