@@ -1,6 +1,7 @@
 .CatalogPage {
     display: flex;
     padding: 0 64px;
+    gap: 64px;
 }
 
 .toolbar {

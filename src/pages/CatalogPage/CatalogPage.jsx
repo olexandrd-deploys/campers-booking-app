@@ -2,6 +2,7 @@ import Button from "../../components/Button/Button";
 import FiltersEquipment from "../../components/Catalog/FiltersEquipment/FiltersEquipment";
 import FiltersVehicle from "../../components/Catalog/FiltersVehicle/FiltersVehicle";
 import Location from "../../components/Catalog/Location/Location";
+import SearchResultList from "../../components/Catalog/SearchResultList/SearchResultList";
 import css from "./CatalogPage.module.css";
 
 const CatalogPage = () => {
@@ -20,7 +21,9 @@ const CatalogPage = () => {
         </div>
         <Button>Search</Button>
       </div>
-      <div className={css.searchResultList}></div>
+      <div className={css.searchResultList}>
+        <SearchResultList />
+      </div>
     </div>
   );
 };
