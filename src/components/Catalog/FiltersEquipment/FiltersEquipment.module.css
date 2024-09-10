@@ -1,0 +1,18 @@
+.filterlist {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    row-gap: 8px;
+    column-gap: 12px;
+    max-width: 360px;
+
+}
+
+.separator {
+    margin-top: 24px;
+    margin-bottom: 24px;
+}
+
+.VehicleEquipment {
+    margin-top: 32px;
+}

@@ -1,0 +1,24 @@
+.filterButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 8px;
+    border: 1px solid #dadde1;
+    background-color: #fff;
+    border-radius: 12px;
+    width: 112px;
+    height: 96px;
+}
+
+.filterButton svg {
+    width: 32px;
+    height: 32px;
+}
+
+.filterButton p {
+    font-size: 16px;
+    font-weight: 400;
+    color: #6c717b;
+    margin: 0;
+}
