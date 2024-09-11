@@ -5,8 +5,17 @@ import CatalogPage from "./pages/CatalogPage/CatalogPage";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 import CamperPage from "./pages/CamperPage/CamperPage";
 import ReviewsSection from "./components/Reviews/ReviewsSection/ReviewsSection";
+import { useDispatch } from "react-redux";
+import { useEffect } from "react";
+import { fetchCampers } from "./redux/vehicles/operations";
 
 const App = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchCampers());
+  }, [dispatch]);
+
   return (
     <>
       <AppBar />

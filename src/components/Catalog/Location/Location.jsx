@@ -1,11 +1,8 @@
 import Select, { components } from "react-select";
 import css from "./Location.module.css";
-
-const options = [
-  { value: "chocolate", label: "Chocolate" },
-  { value: "strawberry", label: "Strawberry" },
-  { value: "vanilla", label: "Vanilla" },
-];
+import { useDispatch, useSelector } from "react-redux";
+import { selectLocation } from "../../../redux/vehicles/selectors";
+import { setLocation } from "../../../redux/filters/slice";
 
 const DropdownIndicator = (props) => {
   return (
@@ -31,12 +28,16 @@ const customStyles = {
   }),
   input: (styles) => ({
     ...styles,
-    paddingLeft: 48,
+    paddingLeft: 42,
     color: "#101828",
+  }),
+  placeholder: (styles) => ({
+    ...styles,
+    paddingLeft: 42,
   }),
   singleValue: (styles) => ({
     ...styles,
-    paddingLeft: 48,
+    paddingLeft: 42,
   }),
   dropdownIndicator: () => ({
     display: "none",
@@ -47,6 +48,13 @@ const customStyles = {
 };
 
 const Location = () => {
+  const options = useSelector(selectLocation);
+  const dispatch = useDispatch();
+
+  const handleChange = (e) => {
+    dispatch(setLocation(e.value));
+  };
+
   return (
     <div className={css.locationContainer}>
       <svg className={css.mapIcon}>
@@ -56,9 +64,10 @@ const Location = () => {
       <Select
         options={options}
         components={{ DropdownIndicator }}
-        defaultValue={options[0]}
+        placeholder="Select location"
         styles={customStyles}
         isClearable={false}
+        onChange={handleChange}
       ></Select>
     </div>
   );

@@ -8,7 +8,7 @@ export const fetchCampers = createAsyncThunk(
   async (_, { rejectWithValue }) => {
     try {
       const { data } = await axios.get("/campers");
-      return data;
+      return data.items;
     } catch (error) {
       return rejectWithValue(error.message);
     }

@@ -22,3 +22,7 @@
     color: #6c717b;
     margin: 0;
 }
+
+.filterButtonActive {
+    border: 1px solid #e44848;
+}
