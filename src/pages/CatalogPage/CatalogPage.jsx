@@ -6,6 +6,12 @@ import SearchResultList from "../../components/Catalog/SearchResultList/SearchRe
 import css from "./CatalogPage.module.css";
 
 const CatalogPage = () => {
+  // const dispatch = useDispatch();
+
+  // const handleClick = () => {
+  //   dispatch(selectFilteredCampers());
+  // };
+
   return (
     <div className={css.CatalogPage}>
       <div className={css.toolbar}>
