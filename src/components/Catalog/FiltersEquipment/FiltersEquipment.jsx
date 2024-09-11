@@ -30,7 +30,6 @@ const FiltersEquipment = () => {
             icon={filter.icon}
             value={filter.value}
             handleClick={handleClick}
-            className={css.filterButtonActive}
           />
         ))}
       </div>

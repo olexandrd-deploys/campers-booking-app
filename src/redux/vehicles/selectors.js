@@ -8,7 +8,7 @@ export const selectLocation = createSelector([selectCampers], (campers) =>
   campers
     .map((item) => ({
       value: item.location,
-      label: item.location,
+      label: item.location.split(", ").reverse().join(", "),
     }))
     .filter(
       (item, index, self) =>
