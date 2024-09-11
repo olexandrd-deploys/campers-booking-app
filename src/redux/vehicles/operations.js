@@ -1,38 +1,14 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
-axios.defaults.baseURL = "https://connections-api.goit.global/";
+axios.defaults.baseURL = "https://66b1f8e71ca8ad33d4f5f63e.mockapi.io";
 
-export const fetchContacts = createAsyncThunk(
-  "contacts/fetchContacts",
+export const fetchCampers = createAsyncThunk(
+  "vehicles/fetchCampers",
   async (_, { rejectWithValue }) => {
     try {
-      const { data } = await axios.get("/contacts");
+      const { data } = await axios.get("/campers");
       return data;
-    } catch (error) {
-      return rejectWithValue(error.message);
-    }
-  }
-);
-
-export const addContact = createAsyncThunk(
-  "contacts/addContact",
-  async ({ name, number }, { rejectWithValue }) => {
-    try {
-      const { data } = await axios.post("/contacts", { name, number });
-      return data;
-    } catch (error) {
-      return rejectWithValue(error.message);
-    }
-  }
-);
-
-export const deleteContact = createAsyncThunk(
-  "contacts/deleteContact",
-  async (id, { rejectWithValue }) => {
-    try {
-      await axios.delete(`/contacts/${id}`);
-      return id;
     } catch (error) {
       return rejectWithValue(error.message);
     }

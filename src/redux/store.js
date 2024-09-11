@@ -2,22 +2,24 @@ import storage from "redux-persist/lib/storage";
 import persistReducer from "redux-persist/es/persistReducer";
 import persistStore from "redux-persist/es/persistStore";
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
-import { contactsReducer } from "./vehicles/slice";
+import { vehiclesReducer } from "./vehicles/slice";
 import { filtersReducer } from "./filters/slice";
-import { authReducer } from "./auth/slice";
+import { favoritesReducer } from "./favorites/slice";
 
 const persistConfig = {
-  key: "contactsApp",
+  key: "favoriteCampers",
   storage,
-  whitelist: ["token"],
 };
 
-const persistedAuthReducer = persistReducer(persistConfig, authReducer);
+const persistedFavoriteReducer = persistReducer(
+  persistConfig,
+  favoritesReducer
+);
 
 const rootReducer = combineReducers({
-  contacts: contactsReducer,
+  vehicles: vehiclesReducer,
   filters: filtersReducer,
-  auth: persistedAuthReducer,
+  favorites: persistedFavoriteReducer,
 });
 
 export const store = configureStore({
