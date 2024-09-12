@@ -4,11 +4,6 @@ import { fetchCampers } from "../vehicles/operations";
 const vehiclesSlice = createSlice({
   name: "vehicles",
   initialState: { items: [], loading: false, error: null },
-  reducers: {
-    flushContacts: (state) => {
-      state.items = [];
-    },
-  },
   extraReducers: (builder) => {
     builder
       .addCase(fetchCampers.pending, (state) => {

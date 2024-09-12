@@ -8,6 +8,8 @@ import {
 export const selectCampers = (state) => state.vehicles.items;
 export const selectIsLoading = (state) => state.vehicles.loading;
 export const selectError = (state) => state.vehicles.error;
+export const selectCamperById = (state, camperId) =>
+  state.vehicles.items.find((item) => item.id === camperId);
 
 export const selectRawLocation = createSelector([selectCampers], (campers) =>
   campers

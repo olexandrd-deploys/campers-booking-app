@@ -1,0 +1,59 @@
+.bookingBlock {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 24px;
+    border: 1px solid #dadde1;
+    border-radius: 10px;
+    padding: 44px;
+    width: 641px;
+    height: 588px;
+}
+
+.bookHeader {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 8px;
+    width: 527px;
+
+    h3 {
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 120%;
+        color: #101828;
+    }
+
+    p {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 150%;
+        color: #6c717b;
+    }
+}
+
+.formContainer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 24px;
+    width: 527px;
+}
+
+.input {
+    border-radius: 10px;
+    padding: 18px;
+    width: 527px;
+    height: 60px;
+    background: #f7f7f7;
+    border: none;
+    outline: none;
+}
+
+.formContainer label:nth-last-of-type(1) .input {
+    height: 118px;
+    outline: none;
+    resize: none;
+}

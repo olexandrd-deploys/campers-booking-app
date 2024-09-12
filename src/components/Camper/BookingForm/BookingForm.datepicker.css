@@ -1,0 +1,15 @@
+/* Custom calendar */
+
+.react-datepicker__header {
+    background-color: #fff;
+}
+
+.react-datepicker__day--selecting-range-start,
+.react-datepicker__day--in-selecting-range,
+.react-datepicker__day--in-range,
+.react-datepicker__day--range-end,
+.react-datepicker__day:hover {
+    border-radius: 32px;
+    background: #475467;
+    color: #f7f7f7;
+}

@@ -1,14 +1,7 @@
 import { NavLink } from "react-router-dom";
 import Button from "../../Button/Button";
 import css from "./SearchResultItem.module.css";
-
-const featuredList = [
-  { name: "AC", icon: "ac" },
-  { name: "bathroom", icon: "bathroom" },
-  { name: "kitchen", icon: "kitchen" },
-  { name: "TV", icon: "tv" },
-  { name: "radio", icon: "radio" },
-];
+import { featuredList } from "../../../helpers/constants";
 
 const SearchResultItem = ({
   camper: { gallery, description, name, price, rating, reviews, location },
