@@ -30,9 +30,16 @@
     align-items: flex-start;
     justify-content: space-between;
     flex-direction: column;
-    gap: 20px;
     width: 524px;
     height: 320px;
+}
+
+.itemInfoWrapper {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 24px;
 }
 
 .itemHeader {
