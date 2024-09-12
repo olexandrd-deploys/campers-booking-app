@@ -59,10 +59,8 @@ const SearchResultItem = ({
                 <use href="/icons.svg#transmission"></use>
               </svg>
               <p>
-                <p>
-                  {camper.transmission.charAt(0).toUpperCase() +
-                    camper.transmission.slice(1)}
-                </p>
+                {camper.transmission.charAt(0).toUpperCase() +
+                  camper.transmission.slice(1)}
               </p>
             </div>
             <div className={css.feature}>
@@ -70,12 +68,7 @@ const SearchResultItem = ({
                 <use href="/icons.svg#fuel"></use>
               </svg>
               <p>
-                <p>
-                  <p>
-                    {camper.engine.charAt(0).toUpperCase() +
-                      camper.engine.slice(1)}
-                  </p>
-                </p>
+                {camper.engine.charAt(0).toUpperCase() + camper.engine.slice(1)}
               </p>
             </div>
             {featuredList

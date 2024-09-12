@@ -5,6 +5,7 @@ import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import { vehiclesReducer } from "./vehicles/slice";
 import { filtersReducer } from "./filters/slice";
 import { favoritesReducer } from "./favorites/slice";
+import { appliedFiltersReducer } from "./appliedFilters/slice";
 
 const persistConfig = {
   key: "favoriteCampers",
@@ -20,6 +21,7 @@ const rootReducer = combineReducers({
   vehicles: vehiclesReducer,
   filters: filtersReducer,
   favorites: persistedFavoriteReducer,
+  appliedFilters: appliedFiltersReducer,
 });
 
 export const store = configureStore({

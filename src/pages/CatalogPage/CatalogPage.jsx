@@ -1,16 +1,20 @@
+import { useDispatch, useSelector } from "react-redux";
 import Button from "../../components/Button/Button";
 import FiltersEquipment from "../../components/Catalog/FiltersEquipment/FiltersEquipment";
 import FiltersVehicle from "../../components/Catalog/FiltersVehicle/FiltersVehicle";
 import Location from "../../components/Catalog/Location/Location";
 import SearchResultList from "../../components/Catalog/SearchResultList/SearchResultList";
 import css from "./CatalogPage.module.css";
+import { setFilters } from "../../redux/appliedFilters/slice";
+import { selectSelectedFIlers } from "../../redux/filters/selectors";
 
 const CatalogPage = () => {
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
+  const filters = useSelector(selectSelectedFIlers);
 
-  // const handleClick = () => {
-  //   dispatch(selectFilteredCampers());
-  // };
+  const handleSearch = () => {
+    dispatch(setFilters(filters));
+  };
 
   return (
     <div className={css.CatalogPage}>
@@ -25,7 +29,7 @@ const CatalogPage = () => {
         <div className={css.filtersVehicle}>
           <FiltersVehicle />
         </div>
-        <Button>Search</Button>
+        <Button clickHandler={handleSearch}>Search</Button>
       </div>
       <div className={css.searchResultList}>
         <SearchResultList />

@@ -1,7 +1,7 @@
 import Select, { components } from "react-select";
 import css from "./Location.module.css";
 import { useDispatch, useSelector } from "react-redux";
-import { selectLocation } from "../../../redux/vehicles/selectors";
+import { selectRawLocation } from "../../../redux/vehicles/selectors";
 import { setLocation } from "../../../redux/filters/slice";
 
 const DropdownIndicator = (props) => {
@@ -48,7 +48,7 @@ const customStyles = {
 };
 
 const Location = () => {
-  const options = useSelector(selectLocation);
+  const options = useSelector(selectRawLocation);
   const dispatch = useDispatch();
 
   const handleChange = (e) => {
