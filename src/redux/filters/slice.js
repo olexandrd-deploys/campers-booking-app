@@ -12,6 +12,10 @@ const filtersSlice = createSlice({
       state.location = action.payload;
     },
     setType: (state, action) => {
+      if (state.type === action.payload) {
+        state.type = "";
+        return;
+      }
       state.type = action.payload;
     },
     toggleFeature: (state, action) => {
