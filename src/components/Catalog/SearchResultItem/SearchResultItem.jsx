@@ -54,6 +54,30 @@ const SearchResultItem = ({
           </div>
           <p className={css.description}>{description}</p>
           <div className={css.itemFeatures}>
+            <div className={css.feature}>
+              <svg className={css.icon}>
+                <use href="/icons.svg#transmission"></use>
+              </svg>
+              <p>
+                <p>
+                  {camper.transmission.charAt(0).toUpperCase() +
+                    camper.transmission.slice(1)}
+                </p>
+              </p>
+            </div>
+            <div className={css.feature}>
+              <svg className={css.icon}>
+                <use href="/icons.svg#fuel"></use>
+              </svg>
+              <p>
+                <p>
+                  <p>
+                    {camper.engine.charAt(0).toUpperCase() +
+                      camper.engine.slice(1)}
+                  </p>
+                </p>
+              </p>
+            </div>
             {featuredList
               .filter((feature) => camper[feature.name])
               .map((feature) => (
