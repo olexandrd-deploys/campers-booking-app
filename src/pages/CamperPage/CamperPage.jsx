@@ -12,6 +12,7 @@ import {
 
 import { fetchCampers } from "../../redux/vehicles/operations";
 import BookingForm from "../../components/Camper/BookingForm/BookingForm";
+import md5 from "md5";
 
 const CamperPage = () => {
   const { camperId } = useParams();
@@ -48,7 +49,10 @@ const CamperPage = () => {
           </div>
           <div className={css.gallery}>
             {camper.gallery.map((image) => (
-              <div key={image.original} className={css.galleryImageContainer}>
+              <div
+                key={md5(image.original)}
+                className={css.galleryImageContainer}
+              >
                 <img
                   className={css.galleryImage}
                   src={image.original}
@@ -99,7 +103,10 @@ const CamperPage = () => {
                             {attribute.charAt(0).toUpperCase() +
                               attribute.slice(1)}
                           </p>
-                          <p>{camper[attribute]}</p>
+                          <p>
+                            {camper[attribute].charAt(0).toUpperCase() +
+                              camper[attribute].slice(1)}
+                          </p>
                         </div>
                       ))}
                     </div>
@@ -107,7 +114,40 @@ const CamperPage = () => {
                 </div>
               </TabPanel>
               <TabPanel>
-                <h3>Reviews</h3>
+                <div className={css.reviewsTab}>
+                  {camper.reviews.map((review) => (
+                    <div
+                      key={md5(review.comment)}
+                      className={css.reviewContainer}
+                    >
+                      <div className={css.reviewerContainer}>
+                        <div className={css.reviewerIcon}>
+                          {review.reviewer_name.charAt(0).toUpperCase()}
+                        </div>
+                        <div className={css.reviewer}>
+                          <p className={css.reviewerName}>
+                            {review.reviewer_name}
+                          </p>
+                          <div className={css.reviewerRating}>
+                            {[...Array(5)].map((_, index) => (
+                              <svg
+                                key={index}
+                                className={
+                                  index < review.reviewer_rating
+                                    ? css.filledStar
+                                    : css.emptyStar
+                                }
+                              >
+                                <use href="/icons.svg#rating"></use>
+                              </svg>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+                      <p className={css.commentText}>{review.comment}</p>
+                    </div>
+                  ))}
+                </div>
               </TabPanel>
               <BookingForm />
             </div>
