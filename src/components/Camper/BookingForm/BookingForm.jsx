@@ -57,7 +57,7 @@ const BookingForm = () => {
                   setDateRange(update);
                   setFieldValue("bookingDate", update);
                 }}
-                placeholderText="Select a date range"
+                placeholderText="Booking date*"
                 className={css.input}
                 dateFormat="dd/MM/yyyy"
               />

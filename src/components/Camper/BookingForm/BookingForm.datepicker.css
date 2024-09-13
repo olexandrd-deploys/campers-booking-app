@@ -4,6 +4,7 @@
     background-color: #fff;
 }
 
+.react-datepicker__day--keyboard-selected,
 .react-datepicker__day--selecting-range-start,
 .react-datepicker__day--in-selecting-range,
 .react-datepicker__day--in-range,
