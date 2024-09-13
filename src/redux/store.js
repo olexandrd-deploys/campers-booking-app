@@ -6,6 +6,7 @@ import { vehiclesReducer } from "./vehicles/slice";
 import { filtersReducer } from "./filters/slice";
 import { favoritesReducer } from "./favorites/slice";
 import { appliedFiltersReducer } from "./appliedFilters/slice";
+import { paginationReducer } from "./pagination/slice";
 
 const persistConfig = {
   key: "favoriteCampers",
@@ -22,6 +23,7 @@ const rootReducer = combineReducers({
   filters: filtersReducer,
   favorites: persistedFavoriteReducer,
   appliedFilters: appliedFiltersReducer,
+  pagination: paginationReducer,
 });
 
 export const store = configureStore({

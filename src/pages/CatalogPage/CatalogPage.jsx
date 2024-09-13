@@ -7,6 +7,7 @@ import SearchResultList from "../../components/Catalog/SearchResultList/SearchRe
 import css from "./CatalogPage.module.css";
 import { setFilters } from "../../redux/appliedFilters/slice";
 import { selectSelectedFIlers } from "../../redux/filters/selectors";
+import { resetVisibleCount } from "../../redux/pagination/slice";
 
 const CatalogPage = () => {
   const dispatch = useDispatch();
@@ -14,6 +15,7 @@ const CatalogPage = () => {
 
   const handleSearch = () => {
     dispatch(setFilters(filters));
+    dispatch(resetVisibleCount());
   };
 
   return (

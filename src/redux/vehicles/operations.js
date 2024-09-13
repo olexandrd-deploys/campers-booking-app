@@ -11,7 +11,7 @@ const requestParams = {
     limit: 100,
     // Filtering is not implemented in the backend
     // So we will fetch all the items and filter them in the frontend
-    // until results size are small
+    // Until results size are small and frontend filtering using server pagination makes no sense
   },
 };
 export const fetchCampers = createAsyncThunk(
