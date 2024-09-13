@@ -3,6 +3,7 @@ import css from "./Location.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { selectRawLocation } from "../../../redux/vehicles/selectors";
 import { setLocation } from "../../../redux/filters/slice";
+import { selectLocation } from "../../../redux/filters/selectors";
 
 const DropdownIndicator = (props) => {
   return (
@@ -49,7 +50,11 @@ const customStyles = {
 
 const Location = () => {
   const options = useSelector(selectRawLocation);
+  const selectedLocation = useSelector(selectLocation);
   const dispatch = useDispatch();
+
+  const selectedOption =
+    options.find((option) => option.value === selectedLocation) || null;
 
   const handleChange = (e) => {
     if (!e) {
@@ -66,6 +71,7 @@ const Location = () => {
       </svg>
       <p>Location</p>
       <Select
+        value={selectedOption}
         options={options}
         components={{ DropdownIndicator }}
         placeholder="City"
