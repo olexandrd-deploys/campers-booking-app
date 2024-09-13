@@ -39,7 +39,7 @@ const SearchResultItem = ({
         <div className={css.itemInfoWrapper}>
           <div className={css.itemHeaderContainer}>
             <div className={css.itemHeader}>
-              <h2>{name}</h2>
+              <h2 className={css.itemName}>{name}</h2>
               <div className={css.priceContainer}>
                 <p className={css.price}>{`€${price}.00`}</p>
                 <button

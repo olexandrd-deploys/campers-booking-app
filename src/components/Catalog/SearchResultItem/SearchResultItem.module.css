@@ -188,3 +188,10 @@
     gap: 16px;
     flex-wrap: wrap;
 }
+
+.itemName {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 340px;
+}
