@@ -14,3 +14,9 @@ export const vehicleDetailsAttributes = [
   "tank",
   "consumption",
 ];
+
+export const vehicleTypeFilters = [
+  { filterName: "Van", icon: "#van", value: "panelTruck" },
+  { filterName: "Fully Integrated", icon: "#full", value: "fullyIntegrated" },
+  { filterName: "Alcove", icon: "#alcove", value: "alcove" },
+];

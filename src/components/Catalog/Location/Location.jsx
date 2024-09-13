@@ -52,6 +52,10 @@ const Location = () => {
   const dispatch = useDispatch();
 
   const handleChange = (e) => {
+    if (!e) {
+      dispatch(setLocation(""));
+      return;
+    }
     dispatch(setLocation(e.value));
   };
 
@@ -66,7 +70,7 @@ const Location = () => {
         components={{ DropdownIndicator }}
         placeholder="Select location"
         styles={customStyles}
-        isClearable={false}
+        isClearable={true}
         onChange={handleChange}
       ></Select>
     </div>
