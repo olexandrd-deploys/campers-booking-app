@@ -10,7 +10,7 @@ import {
   featuredList,
   vehicleDetailsAttributes,
 } from "../../helpers/constants";
-import { fetchCampers } from "../../redux/vehicles/operations";
+import { fetchCamperById } from "../../redux/vehicles/operations";
 import BookingForm from "../../components/Camper/BookingForm/BookingForm";
 
 const CamperPage = () => {
@@ -18,8 +18,8 @@ const CamperPage = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchCampers());
-  }, [dispatch]);
+    dispatch(fetchCamperById(camperId));
+  }, [dispatch, camperId]);
 
   const camper = useSelector((state) => selectCamperById(state, camperId));
   return (
