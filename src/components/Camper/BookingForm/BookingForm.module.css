@@ -38,8 +38,9 @@
     align-items: center;
     justify-content: flex-start;
     flex-direction: column;
-    gap: 24px;
+    gap: 14px;
     width: 527px;
+    height: 420px;
 }
 
 .input {
@@ -56,4 +57,8 @@
     height: 118px;
     outline: none;
     resize: none;
+}
+
+.formContainer button {
+    margin-top: 10px;
 }

@@ -20,4 +20,4 @@ npm run dev
 
 ## Demo
 
-Live demo is available.
+Live demo is available on [Vercel](https://campers-booking-app.vercel.app/).
