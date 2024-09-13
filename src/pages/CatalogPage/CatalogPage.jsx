@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { useEffect } from "react";
+import { lazy, Suspense, useEffect } from "react";
 import Button from "../../components/Button/Button";
 import FiltersEquipment from "../../components/Catalog/FiltersEquipment/FiltersEquipment";
 import FiltersVehicle from "../../components/Catalog/FiltersVehicle/FiltersVehicle";
@@ -9,11 +9,10 @@ import css from "./CatalogPage.module.css";
 import { setFilters } from "../../redux/appliedFilters/slice";
 import { selectSelectedFIlers } from "../../redux/filters/selectors";
 import { resetVisibleCount } from "../../redux/pagination/slice";
-
 import { fetchCampers } from "../../redux/vehicles/operations";
 import { selectError, selectIsLoading } from "../../redux/vehicles/selectors";
 import Loader from "../../components/Loader/Loader";
-import LoadError from "../../components/LoadError/LoadError";
+const LoadError = lazy(() => import("../../components/LoadError/LoadError"));
 
 const CatalogPage = () => {
   const dispatch = useDispatch();
@@ -33,7 +32,7 @@ const CatalogPage = () => {
   return (
     <>
       {isLoading && <Loader />}
-      {requestError && <LoadError />}
+      <Suspense fallback={<Loader />}>{requestError && <LoadError />}</Suspense>
       <div className={css.CatalogPage}>
         <div className={css.toolbar}>
           <div className={css.location}>

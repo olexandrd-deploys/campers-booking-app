@@ -1,18 +1,17 @@
 import { useParams } from "react-router-dom";
+import md5 from "md5";
 import { useEffect } from "react";
-import css from "./CamperPage.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { selectCamperById } from "../../redux/vehicles/selectors";
 import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
+import css from "./CamperPage.module.css";
 import "react-tabs/style/react-tabs.css";
 import {
   featuredList,
   vehicleDetailsAttributes,
 } from "../../helpers/constants";
-
 import { fetchCampers } from "../../redux/vehicles/operations";
 import BookingForm from "../../components/Camper/BookingForm/BookingForm";
-import md5 from "md5";
 
 const CamperPage = () => {
   const { camperId } = useParams();
