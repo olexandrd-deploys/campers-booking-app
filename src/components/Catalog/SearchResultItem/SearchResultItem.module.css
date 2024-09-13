@@ -111,6 +111,12 @@
     }
 }
 
+.favoritesButtonActive {
+    svg {
+        stroke: #e44848;
+    }
+}
+
 .rating {
     display: flex;
     align-items: center;

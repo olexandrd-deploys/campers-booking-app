@@ -6,10 +6,12 @@ const favoritesSlice = createSlice({
     items: [],
   },
   reducers: {
-    addFavorite: (state, action) =>
-      (state.items = state.items.push(action.payload)),
-    removeFavorite: (state, action) =>
-      (state.items = state.items.filter((item) => item.id !== action.payload)),
+    addFavorite: (state, action) => {
+      state.items.push(action.payload);
+    },
+    removeFavorite: (state, action) => {
+      state.items = state.items.filter((item) => item !== action.payload);
+    },
   },
 });
 

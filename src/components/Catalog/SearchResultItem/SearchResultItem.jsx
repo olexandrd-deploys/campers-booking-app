@@ -1,12 +1,31 @@
 import { NavLink } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 import Button from "../../Button/Button";
 import css from "./SearchResultItem.module.css";
 import { featuredList } from "../../../helpers/constants";
+import { selectIsFavorite } from "../../../redux/favorites/selectors";
+import { addFavorite, removeFavorite } from "../../../redux/favorites/slice";
+import clsx from "clsx";
 
 const SearchResultItem = ({
   camper: { gallery, description, name, price, rating, reviews, location },
   camper,
 }) => {
+  const isFavorite = useSelector((state) => selectIsFavorite(state, camper.id));
+  const dispatch = useDispatch();
+
+  const handleFavoriteClick = () => {
+    if (isFavorite) {
+      dispatch(removeFavorite(camper.id));
+    } else {
+      dispatch(addFavorite(camper.id));
+    }
+  };
+
+  const favoriteClasses = isFavorite
+    ? clsx(css.favoritesButton, css.favoritesButtonActive)
+    : css.favoritesButton;
+
   return (
     <div className={css.itemContainer}>
       <div className={css.itemImageContainer}>
@@ -23,7 +42,10 @@ const SearchResultItem = ({
               <h2>{name}</h2>
               <div className={css.priceContainer}>
                 <p className={css.price}>{`€${price}.00`}</p>
-                <button className={css.favoritesButton}>
+                <button
+                  onClick={handleFavoriteClick}
+                  className={favoriteClasses}
+                >
                   <svg className={css.icon}>
                     <use href="/icons.svg#favorites"></use>
                   </svg>
