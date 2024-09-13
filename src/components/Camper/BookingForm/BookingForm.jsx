@@ -5,6 +5,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import "./BookingForm.datepicker.css";
 import css from "./BookingForm.module.css";
 import Button from "../../Button/Button";
+import { toast } from "react-toastify";
 
 const initialValues = {
   name: "",
@@ -14,7 +15,7 @@ const initialValues = {
 };
 
 const submitHandler = (values) => {
-  console.log(values);
+  toast(`Thank you, ${values.name}! Your journey will start soon! 🚗`);
 };
 
 const BookingForm = () => {

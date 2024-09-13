@@ -1,12 +1,14 @@
 import { Route, Routes } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { useEffect } from "react";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import AppBar from "./components/AppBar/AppBar/AppBar";
 import HomePage from "./pages/HomePage/HomePage";
 import CatalogPage from "./pages/CatalogPage/CatalogPage";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 import CamperPage from "./pages/CamperPage/CamperPage";
 import ReviewsSection from "./components/Reviews/ReviewsSection/ReviewsSection";
-import { useDispatch } from "react-redux";
-import { useEffect } from "react";
 import { fetchCampers } from "./redux/vehicles/operations";
 
 const App = () => {
@@ -27,6 +29,7 @@ const App = () => {
         </Route>
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
+      <ToastContainer />
     </>
   );
 };
