@@ -2,8 +2,12 @@ import clsx from "clsx";
 import css from "./NavMenu.module.css";
 import { NavLink } from "react-router-dom";
 
-const buildLinkClass = ({ isActive }) => {
-  return clsx(css.link, isActive && css.active);
+const isActiveLink = (path, isActive) => {
+  return path === window.location.pathname && isActive;
+};
+
+const buildLinkClass = ({ isActive, isPending }) => {
+  return clsx(css.link, isActive && css.active, isPending && css.pending);
 };
 
 const NavMenu = () => {
@@ -11,12 +15,22 @@ const NavMenu = () => {
     <nav className={css.navigationContainer}>
       <ul className={css.navigationList}>
         <li>
-          <NavLink to="/" className={buildLinkClass}>
+          <NavLink
+            to="/"
+            className={({ isActive }) =>
+              buildLinkClass({ isActive: isActiveLink("/", isActive) })
+            }
+          >
             Home
           </NavLink>
         </li>
         <li>
-          <NavLink to="/catalog" className={buildLinkClass}>
+          <NavLink
+            to="/catalog"
+            className={({ isActive }) =>
+              buildLinkClass({ isActive: isActiveLink("/catalog", isActive) })
+            }
+          >
             Catalog
           </NavLink>
         </li>

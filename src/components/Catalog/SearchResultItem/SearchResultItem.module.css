@@ -9,7 +9,10 @@
     padding: 24px;
     width: 888px;
     height: 368px;
-    margin-bottom: 32px;
+}
+
+.itemContainer:first-child .rating {
+    text-decoration: none;
 }
 
 .itemImageContainer {
@@ -123,6 +126,7 @@
     justify-content: flex-start;
     flex-direction: row;
     gap: 8px;
+    text-decoration: underline;
 
     svg {
         width: 16px;
@@ -130,6 +134,8 @@
         fill: #ffc531;
     }
 }
+
+
 
 .location {
     display: flex;

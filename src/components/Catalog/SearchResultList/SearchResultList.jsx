@@ -4,6 +4,7 @@ import SearchResultItem from "../SearchResultItem/SearchResultItem";
 import Button from "../../Button/Button";
 import { selectVisibleCount } from "../../../redux/pagination/selectors";
 import { incrementVisibleCount } from "../../../redux/pagination/slice";
+import css from "./SearchResultList.module.css";
 
 const SearchResultList = () => {
   const dispatch = useDispatch();
@@ -15,13 +16,15 @@ const SearchResultList = () => {
   };
 
   return (
-    <div>
+    <div className={css.searchResultList}>
       {campersArray.slice(0, visibleCount).map((camper) => (
         <SearchResultItem key={camper.id} camper={camper} />
       ))}
 
       {visibleCount < campersArray.length && (
-        <Button clickHandler={loadMore}>Load More</Button>
+        <Button customStyles="loadMoreBtn" clickHandler={loadMore}>
+          Load More
+        </Button>
       )}
     </div>
   );

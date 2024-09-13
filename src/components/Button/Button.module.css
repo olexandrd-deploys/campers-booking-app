@@ -17,3 +17,16 @@
 .button:hover {
     background: #d84343;
 }
+
+
+.loadMoreBtn {
+    border: 1px solid #dadde1;
+    background: #fff;
+    color: #101828;
+    margin-top: 8px;
+}
+
+.loadMoreBtn:hover {
+    border: 1px solid #d84343;
+    background: #fff;
+}

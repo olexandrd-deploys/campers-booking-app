@@ -1,6 +1,4 @@
 import { Route, Routes } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import { useEffect } from "react";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import AppBar from "./components/AppBar/AppBar/AppBar";
@@ -9,18 +7,13 @@ import CatalogPage from "./pages/CatalogPage/CatalogPage";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 import CamperPage from "./pages/CamperPage/CamperPage";
 import ReviewsSection from "./components/Reviews/ReviewsSection/ReviewsSection";
-import { fetchCampers } from "./redux/vehicles/operations";
+import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
 
 const App = () => {
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(fetchCampers());
-  }, [dispatch]);
-
   return (
     <>
       <AppBar />
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/catalog" element={<CatalogPage />} />

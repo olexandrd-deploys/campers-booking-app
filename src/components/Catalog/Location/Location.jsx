@@ -68,7 +68,7 @@ const Location = () => {
       <Select
         options={options}
         components={{ DropdownIndicator }}
-        placeholder="Select location"
+        placeholder="City"
         styles={customStyles}
         isClearable={true}
         onChange={handleChange}
