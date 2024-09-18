@@ -52,6 +52,7 @@ const BookingForm = () => {
             <label className={css.label}>
               <DatePicker
                 selectsRange
+                required
                 startDate={startDate}
                 endDate={endDate}
                 onChange={(update) => {
